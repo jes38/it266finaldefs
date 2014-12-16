@@ -692,6 +692,8 @@ entityDef player_marine
 	// default weapons
 	// seperate multiple weapons with commas (no spaces).
 	// NOTE: default ammo must be specified explicitly.
+	
+	//oops, no changes here
 	"weapon"						"weapon_blaster"
 	"current_weapon"					"0"
 
@@ -737,7 +739,8 @@ entityDef player_marine
 	"ammo_hyperblaster"					"0"
 	"ammo_rocketlauncher"					"0"
 	"ammo_grenadelauncher"					"0"
-	"ammo_lightninggun"					"0"
+	//"ammo_lightninggun"					"0"
+	"ammo_lightninggun"					"-1"
 	"ammo_none"						"-1"
 
 	"max_ammo_blaster"					"-1"
@@ -749,7 +752,8 @@ entityDef player_marine
 	"max_ammo_napalmgun"					"100"
 	"max_ammo_rocketlauncher"				"40"
 	"max_ammo_grenadelauncher"				"50"
-	"max_ammo_lightninggun"					"400"
+	//"max_ammo_lightninggun"					"400"
+	"max_ammo_lightninggun"					"-1"
 	"max_ammo_dmg"						"25"
 	"max_ammo_none"						"-1"
 
@@ -1054,11 +1058,17 @@ entityDef player_marine_mp
 {
 	"inherit"			"player_marine"
 
-	"weapon"			"weapon_machinegun,weapon_gauntlet"
-	"current_weapon"		"1"
+	//give player both starship weapons: modded lightning gun and burst rocket launcher
+	//"weapon"			"weapon_machinegun,weapon_gauntlet"
+	//"current_weapon"		"1"
+	"weapon"			"weapon_lightninggun,weapon_rocketlauncher"
+	"current_weapon"		"8"
 
 	// replce blaster with gauntlet in MP
-	"def_weapon0"						"weapon_gauntlet"
+
+	//since lightning gun has infinite ammo, set as default weapon
+	//"def_weapon0"						"weapon_gauntlet"
+	"def_weapon0"						"weapon_lightninggun"
 	"weapon0_best"						"1"
 	"weapon0_cycle"						"1"
 	"weapon0_flashlight"					"0"
@@ -1074,8 +1084,11 @@ entityDef player_marine_mp
 	"weapon10_best"			"1"
 
 	// stats
-	"health"			"125"
-	"armor"				"0"
+	//"health"			"125"
+	"health"			"100"
+	//starships start with shields
+	//"armor"				"0"
+	"armor"				"100"
 
 	"ammo_none"			"-1"
 	"ammo_railgun"			"0"
@@ -1084,7 +1097,8 @@ entityDef player_marine_mp
 	"ammo_blaster"			"-1"
 	"ammo_shotgun"			"0"
 	"ammo_hyperblaster"		"0"
-	"ammo_rocketlauncher"		"0"
+	//"ammo_rocketlauncher"		"0"
+	"ammo_rocketlauncher"		"30"
 	"ammo_grenadelauncher"		"0"
 
 	"powerup_effect_joints"		"*body -*r_wrist r_wrist -*l_wrist l_wrist"

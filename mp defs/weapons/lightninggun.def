@@ -45,7 +45,9 @@ entityDef viewStyle_q3_lightninggun {
 //--------------------------------------------------------------------------------------------------------------------
 entityDef weapon_lightninggun
 {
-	"editor_color"				".3 .3 1"
+	//change color of phaser beam - currently not working
+	//"editor_color"				".3 .3 1"
+	"editor_color"				".3 1 .3"
 	"editor_mins"				"-16 -16 0"
 	"editor_maxs"				"16 16 32"
 
@@ -176,7 +178,9 @@ entityDef weapon_lightninggun_mp
 	"mtr_simple_icon"				"simpleicons/item_lightning_colored"
 	"triggerSize"				"32"
 
-	"range"					"768"
+	//increase range
+	//"range"					"768"
+	"range"					"2000"
 	"fx_trail_noimpact"			"effects/weapons/lightninggun/trail_noimpact.fx"	
 	
 	"muzzle_kick_time"			"0"
@@ -207,7 +211,8 @@ entityDef wpmod_lightninggun_chain
 
 entityDef weaponmod_lightninggun_chain
 {
-	"editor_color"				".3 .3 1"
+	//"editor_color"				".3 .3 1"
+	"editor_color"				".5 1 .3"
 	"editor_mins"				"-16 -16 0"
 	"editor_maxs"				"16 16 32"
 	"editor_menu"				"pickup"
@@ -313,10 +318,8 @@ entityDef damage_lightninggun
 entityDef damage_lightninggun_mp
 {
 	"inherit"					"damage_lightninggun"
-	"damage"					"8"
-	"knockback"					"6"
+
+	//modify damage tables, no knockback
+	"damage"					"5" //old: 8
+	"knockback"					"0" //old: 6
 }
-
-
-
-
